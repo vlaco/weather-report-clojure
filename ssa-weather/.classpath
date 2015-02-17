@@ -26,15 +26,12 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="con" path="ccw.LEININGEN_CONTAINER">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="ssa-weather/target/native/windows/x86_64"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry exported="true" kind="con" path="ccw.LEININGEN_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="classes">
 		<attributes>
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/vanjavlaco/Downloads/clojure-contrib-1.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
