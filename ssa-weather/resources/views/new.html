@@ -1,0 +1,506 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Weather forecast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/custom.css" rel="stylesheet" media="screen">
+</head>
+<body>
+ <header>
+   <h1 id="mainheader">Compare weather conditions!</h1>
+ </header>
+ <form class=".form-horizontal" method="post" action="/result">
+ <div class="col-md-12" id="wrapper">
+  <div class="col-md-6">
+   
+      <div id="empty"></div>
+
+  <div class="form-group form-inline">
+      <label for="inputPassword" class="col-md-4 control-label">Start date: </label>
+      <div class="col-md-6">
+        <label for="startDay" class="sr-only">Day</label>
+          <select class="form-control" id="startDay" name="startDay">
+          </select>
+          <label for="startMonth" class="sr-only">Month</label>
+          <select class="form-control" id="startMonth" name="startMonth">
+          </select>
+          <label for="startYear" class="sr-only">Year</label>
+          <select class="form-control" id="startYear" name="startYear">
+          </select>
+      </div>
+    </div>
+
+     <div class="form-group form-inline">
+      <label for="inputPassword" class="col-md-4 control-label">End date: </label>
+      <div class="col-md-6">
+         <label for="endDay" class="sr-only">Day</label>
+          <select class="form-control" id="endDay" name="endDay">
+          </select>
+          <label for="endMonth" class="sr-only">Month</label>
+          <select class="form-control" id="endMonth" name="endMonth">
+          </select>
+          <label for="endYear" class="sr-only">Year</label>
+          <select class="form-control" id="endYear" name="endYear">
+          </select>
+      </div>
+    </div>
+
+
+
+    <div class="form-group ">
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		Dropdown
+		<span class="caret"></span>
+		</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+			</ul>
+	
+	
+	
+	
+      <!--<label for="features" class="col-md-4 control-label">Weather element for comparing: </label>
+      <div class="col-md-2">
+	  <select class="form-control" id="ex2">
+			<option value="meantempm" >Mean temperature in C</option> 
+			<option value="maxtempm" >Max temperature in C</option> 
+			<option value="mintempm" >Min temperature in C</option> 
+			<option value="meanpressurem" >Pressure in mBar</option> 
+			<option value="meanwindspdm" >Wind speed in km/h</option> 
+			<option value="percipm" >Precipitation in mm</option> 
+</select>
+        <input type="text" class="form-control" id="features" name="features" value="4">
+      </div>-->
+    </div>
+  </div>
+ 
+
+
+
+
+<div class="col-md-11" id="cities-container">
+  <h3 id="cities">Cities</h3>
+  <div class="row">
+    <div class="col-md-2">
+      <h5>Europe</h5>
+      <ul class="list-unstyled">
+          
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Germany/Berlin" name="Germany/Berlin"> Berlin
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Belgium/Brussels" name="Belgium/Brussels"> Brussels
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Hungary/Budapest" name="Hungary/Budapest"> Budapest
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Turkey/Istanbul" name="Turkey/Istanbul"> Istanbul
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="UK/London" name="UK/London"> London
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Spain/Madrid" name="Spain/Madrid"> Madrid
+               </label>
+              </div>
+          </li>
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="France/Paris" name="France/Paris"> Paris
+               </label>
+              </div>
+          </li>
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Czech_Republic/Prague" name="Czech_Republic/Prague"> Prague
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Italy/Rome" name="Italy/Rome"> Rome
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Austria/Vienna" name="Austria/Vienna"> Vienna
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Poland/Warsaw" name="Poland/Warsaw"> Warsaw
+               </label>
+              </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-2">
+       <h5>Asia</h5>
+      <ul class="list-unstyled">
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Indonesia/Jakarta" name="Indonesia/Jakarta"> Jakarta
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Pakistan/Karachi" name="Pakistan/Karachi"> Karachi
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Philippines/Manila" name="Philippines/Manila"> Manila
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="India/Mumbai" name="India/Mumbai"> Mumbai
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="India/New_Delhi" name="India/New_Delhi"> New Delhi
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="South_Korea/Seoul" name="South_Korea/Seoul"> Seoul
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="China/Shanghai" name="China/Shanghai"> Shanghai
+               </label>
+              </div>
+          </li>
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Japan/Tokyo" name="Japan/Tokyo">  Tokyo
+               </label>
+              </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="col-md-2">
+       <h5>North America</h5>
+      <ul class="list-unstyled">
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="IL/Chicago" name="IL/Chicago"> Chicago
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="TX/Houston" name="TX/Houston"> Houston
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="CA/Los_Angeles" name="CA/Los_Angeles"> Los Angeles
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Canada/Montreal" name="Canada/Montreal"> Montreal
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="NY/New_York" name="NY/New_York"> New York
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Canada/Toronto" name="Canada/Toronto"> Toronto
+               </label>
+              </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+   <div class="col-md-2">
+       <h5>South America</h5>
+      <ul class="list-unstyled">
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Colombia/Bogota" name="Colombia/Bogota"> Bogota
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Argentina/Buenos_Aires" name="Argentina/Buenos_Aires"> Buenos Aires
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Peru/Lima" name="Peru/Lima"> Lima
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Mexico/Mexico_City" name="Mexico/Mexico_City"> Mexico City
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Uruguay/Montevideo" name="Uruguay/Montevideo"> Montevideo
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Brazil/Rio_de_Janeiro" name="Brazil/Rio_de_Janeiro"> Rio de Janeiro
+               </label>
+              </div>
+          </li>
+		  <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Chile/Santiago" name="Chile/Santiago"> Santiago
+               </label>
+              </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+   <div class="col-md-2">
+       <h5>Africa</h5>
+      <ul class="list-unstyled">
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Ghana/Accra" name="Ghana/Accra"> Accra
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Ethiopia/Addis_Ababa" name="Ethiopia/Addis_Ababa"> Addis Ababa
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Egypt/Cairo" name="Egypt/Cairo"> Cairo
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="South_Africa/Cape_Town" name="South_Africa/Cape_Town"> Cape Town
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Morocco/Casablanca" name="Morocco/Casablanca"> Casablanca
+               </label>
+              </div>
+          </li>
+		  <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="South_Africa/Johannesburg" name="South_Africa/Johannesburg"> Johannesburg
+               </label>
+              </div>
+          </li>
+		  <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Mozambique/Maputo" name="Mozambique/Maputo"> Maputo
+               </label>
+              </div>
+          </li>
+		  <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Kenya/Nairobi" name="Kenya/Nairobi"> Nairobi
+               </label>
+              </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="col-md-2">
+       <h5>Australia</h5>
+      <ul class="list-unstyled">
+          <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Australia/Adelaide" name="Australia/Adelaide"> Adelaide
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Australia/Brisbane" name="Australia/Brisbane"> Brisbane
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Australia/Melbourne" name="Australia/Melbourne"> Melbourne
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Australia/Perth" name="Australia/Perth"> Perth
+               </label>
+              </div>
+          </li>
+           <li>
+             <div class="checkbox">
+               <label>
+                 <input type="checkbox" id="inlineCheckbox1" value="Australia/Sydney" name="Australia/Sydney"> Sydney
+               </label>
+              </div>
+          </li>
+        </ul>
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
+
+<div class="col-md-12" id="submit-wrap">
+  <!--<input type="submit" class="btn btn-primary" value="Compare weather conditions!">-->
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value ="Compare weather conditions!">
+</div>
+
+</div>
+</form>
+
+
+</body>
+</html>

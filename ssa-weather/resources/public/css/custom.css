@@ -1,0 +1,75 @@
+body, body .div{
+	background-image: url("../img/background-clouds.jpg");
+}
+
+#choose p{
+	float: right;
+	position:relative;
+	height: 10px; margin: 8px 0;
+
+}CADFE3
+#choose .col-md-2{
+	
+	display: block; height: 20px;
+}
+
+#cities{
+	width: 50%;
+	margin: 30px auto;
+	float:none;
+	text-align:center;
+}
+#cities-container .col-md-6{
+	width: 90%;
+	margin: 0px auto;
+	float:none;
+}
+.part-option{
+	margin-top: 0px;
+}
+#wrapper{
+	
+}
+
+#wrapper .col-md-7{
+	/*height: 300px;*/
+	/*width: 50%;*/
+	/*margin: 0 auto;*/
+	/*float:none;*/
+}
+#empty{
+	height: 20px;
+}
+#submit-wrap{
+	height: 50px;
+	width: 100%;
+	margin: 30px auto;
+	float:block;
+	text-align:center;"
+}
+.form-control{
+	background-color: #6699CC;
+	color: #E6E6CC;
+	border-color: #6699CC;
+	margin: 0 10px;
+}
+
+.part-option label{
+	float: right;
+}
+#mainheader{
+	width: 50%;
+	margin: 20px auto;
+	float:none;
+	text-align: center;
+}
+
+#cities-container .col-md-2 {
+	height: 350px;
+	border-color: #444;
+	margin-bottom: 30px;
+}
+
+#cities-container h5{
+	font-size: 20px;
+}
